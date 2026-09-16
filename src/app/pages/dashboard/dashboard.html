@@ -1,0 +1,84 @@
+<div class="dashboard-page">
+  <h1 class="page-title">Dashboard FORD</h1>
+
+  <!-- Cards Superiores -->
+  <div class="cards-grid" *ngIf="veiculoSelecionado">
+    <div class="card">
+      <label for="selectModelo" class="card-label">Veículo</label>
+      <select 
+        id="selectModelo"
+        [ngModel]="veiculoSelecionado.id" 
+        (ngModelChange)="selecionarPorId($event)"
+        class="card-select"
+      >
+        <option *ngFor="let car of veiculos" [value]="car.id">
+          {{ car.modelo }}
+        </option>
+      </select>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Total de Vendas</span>
+      <div class="card-value">
+        <strong>{{ veiculoSelecionado.totalVendas }}</strong> <span class="unit">Unid.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Conectados</span>
+      <div class="card-value">
+        <strong class="highlight-blue">{{ veiculoSelecionado.conectados }}</strong> <span class="unit">Unid.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Update Software</span>
+      <div class="card-value">
+        <strong class="highlight-blue">{{ veiculoSelecionado.updateSoftware }}</strong> <span class="unit">Unid.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imagem Central do Veículo -->
+  <div class="car-center-box" *ngIf="veiculoSelecionado">
+    <img [src]="veiculoSelecionado.imagemUrl" [alt]="veiculoSelecionado.modelo" class="car-image" />
+  </div>
+
+  <!-- Tabela com Cabeçalho Azul e Campo de Código VIN -->
+  <div class="table-wrapper">
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th class="th-input">
+            <input 
+              type="text" 
+              [(ngModel)]="filtroVin" 
+              placeholder="Código - Vin" 
+              class="header-vin-input"
+            />
+          </th>
+          <th>Odômetro</th>
+          <th>Nível de Combustível</th>
+          <th>Status</th>
+          <th>Lat.</th>
+          <th>Long.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr 
+          *ngFor="let item of veiculosTabela" 
+          (click)="selecionarPorVin(item.codigo)"
+          [class.row-selected]="veiculoSelecionado?.codigo === item.codigo"
+          class="clickable-row"
+        >
+          <td>{{ item.codigo }}</td>
+          <td>{{ item.odometro }}</td>
+          <td>{{ item.nivelCombustivel }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.lat }}</td>
+          <td>{{ item.lng }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

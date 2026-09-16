@@ -1,0 +1,33 @@
+<div class="login-container">
+  <!-- Lado Esquerdo: Imagem da Ranger -->
+  <div class="login-left">
+    <img src="img/ranger.png" alt="Ford Ranger" class="car-hero-img">
+  </div>
+
+  <!-- Lado Direito: Formulário -->
+  <div class="login-right">
+    <img src="img/ford.png" alt="Ford Logo" class="ford-logo">
+    <h3 class="title">Boas-vindas</h3>
+
+    <form (ngSubmit)="fazerLogin()" class="form-box">
+      <div class="input-group-custom">
+        <span class="icon">👤</span>
+        <input type="text" placeholder="Insira seu e-mail" [(ngModel)]="usuario" name="usuario" required>
+      </div>
+
+      <div class="input-group-custom">
+        <span class="icon">🔒</span>
+        <input type="password" placeholder="Insira sua senha" [(ngModel)]="senha" name="senha" required>
+      </div>
+
+      <div class="remember-me">
+        <span>Logar automaticamente</span>
+        <input type="checkbox" id="autoLogin">
+      </div>
+
+      <div *ngIf="loginErro" class="error-msg">Usuário ou senha inválidos.</div>
+
+      <button type="submit" class="btn-submit">Entrar</button>
+    </form>
+  </div>
+</div>
