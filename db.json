@@ -1,0 +1,74 @@
+{
+  "vehicle": [
+    {
+      "id": "1",
+      "modelo": "Ranger",
+      "totalVendas": 1200,
+      "conectados": 800,
+      "updateSoftware": 450,
+      "imagemUrl": "/img/ranger.png"
+    },
+    {
+      "id": "2",
+      "modelo": "Mustang",
+      "totalVendas": 1500,
+      "conectados": 500,
+      "updateSoftware": 750,
+      "imagemUrl": "/img/mustang.png"
+    },
+    {
+      "id": "3",
+      "modelo": "Territory",
+      "totalVendas": 4560,
+      "conectados": 500,
+      "updateSoftware": 3050,
+      "imagemUrl": "/img/territory.png"
+    },
+    {
+      "id": "4",
+      "modelo": "Bronco Sport",
+      "totalVendas": 2100,
+      "conectados": 900,
+      "updateSoftware": 600,
+      "imagemUrl": "/img/broncoSport.png"
+    }
+  ],
+ "vehicleData": [
+    {
+      "id": "1",
+      "codigo": "2FRHDUYS2Y63NHD22454",
+      "odometro": "50000 Km",
+      "nivelCombustivel": "90 %",
+      "status": "on",
+      "lat": -12.2322,
+      "lng": -38.2314
+    },
+    {
+      "id": "2",
+      "codigo": "1FA6P8CF0H5100002",
+      "odometro": "15000 Km",
+      "nivelCombustivel": "65 %",
+      "status": "on",
+      "lat": -23.5505,
+      "lng": -46.6333
+    },
+    {
+      "id": "3",
+      "codigo": "3FA6P0H75JR123456",
+      "odometro": "32000 Km",
+      "nivelCombustivel": "40 %",
+      "status": "off",
+      "lat": -22.9068,
+      "lng": -43.1729
+    },
+    {
+      "id": "4",
+      "codigo": "1FMCU9GD9KUB98765",
+      "odometro": "8000 Km",
+      "nivelCombustivel": "100 %",
+      "status": "on",
+      "lat": -12.9714,
+      "lng": -38.5014
+    }
+  ]
+}

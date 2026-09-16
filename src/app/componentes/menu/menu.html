@@ -1,0 +1,32 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleMenu()" aria-label="Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div class="sidebar-header">
+    <img 
+      src="img/ford.png" 
+      alt="Ford Logo" 
+      class="ford-logo"
+    />
+  </div>
+
+  <nav class="sidebar-nav">
+    <a routerLink="/home" routerLinkActive="active" class="nav-item">
+      Home
+    </a>
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+      Dashboard
+    </a>
+  </nav>
+
+  <div class="sidebar-spacer"></div>
+
+  <div class="sidebar-footer">
+    <button class="btn-logout" (click)="onLogout()">
+      Sair (Logout)
+    </button>
+  </div>
+</aside>
